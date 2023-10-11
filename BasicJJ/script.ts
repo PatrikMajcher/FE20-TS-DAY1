@@ -31,3 +31,18 @@ fullName.forEach(name => {
     }
 });
    
+// ex3
+
+let nameArr: string[] = ["John", "Jane", "Max"];
+
+for (let index in nameArr){
+    console.log(index);
+}
+
+for (let value of nameArr){
+    console.log(value);
+}
+
+for (let [index, value] of Object.entries(nameArr)){
+    console.log(index, value);
+}
