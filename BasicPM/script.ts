@@ -1,6 +1,6 @@
 // ex1
 
-let myNumbers: number[] = [1,2,3,4,5,6,7,8,9,10];
+/*let myNumbers: number[] = [1,2,3,4,5,6,7,8,9,10];
 for (let i = 0; i < myNumbers.length; i++) {
     for (let j = 1; j <= 10; j++) {
         let result = myNumbers[i] * j;
@@ -25,7 +25,7 @@ for (let i = 0; i < myNumbers.length; i++) {
 */ 
 // ex2
 
-let fullName = {
+/*let fullName = {
     firstName: "John",
     lastName: "Doe"
 };
@@ -65,3 +65,59 @@ myNames.forEach((v,i) => {
 myNames.forEach((v,i) => {
     console.log(`${v} ${i}`);
 });
+
+*/ 
+
+// Advanced ex 
+
+type MenuItem = {
+    name: string;
+    description: string;
+    price: number;
+    img: string;
+};
+
+const menu: MenuItem[] = [
+    {
+        name: 'Spaghetti Carbonara',
+        description: 'Creamy pasta with bacon and Parmesan cheese.',
+        price: 12.99,
+        img: 'https://cdn.pixabay.com/photo/2018/07/18/19/12/pasta-3547078_1280.jpg'
+    },
+    {
+        name: 'Grilled Salmon',
+        description: 'Freshly grilled salmon with lemon butter sauce.',
+        price: 15.99,
+        img: 'https://cdn.pixabay.com/photo/2016/06/28/17/32/salmon-1485014_1280.jpg'
+    },
+    {
+        name: 'Tiramisu',
+        description: 'Classic Italian dessert with coffee and mascarpone.',
+        price: 6.99,
+        img: 'https://cdn.pixabay.com/photo/2018/04/18/17/22/dessert-3331009_1280.jpg'
+    },
+];
+
+const menuContainer = document.getElementById('menu');
+if (menuContainer) {
+    const menuList = document.createElement('ul');
+    menuContainer.appendChild(menuList);
+
+    menu.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p>Price: $${item.price.toFixed(2)}</p>
+            <img src="${item.img}" alt="${item.name}">
+        `;
+        menuList.appendChild(listItem);
+    });
+}
+
+
+const restaurantName = 'Majcher Restaurant';
+
+let restaurantName1 = document.querySelector('h1') as HTMLElement;
+restaurantName1.innerText = restaurantName;
+document.title = restaurantName;
